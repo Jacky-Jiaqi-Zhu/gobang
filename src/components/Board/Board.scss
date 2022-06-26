@@ -1,0 +1,11 @@
+.board {
+    display: inline-block;
+    margin: 20px;
+    padding: 0px;
+    border: 4px solid black;
+
+    &__row {
+        display: flex;
+        justify-content: flex-start;
+    }
+}

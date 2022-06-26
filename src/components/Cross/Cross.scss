@@ -1,0 +1,90 @@
+.cross {
+	position: relative;
+
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		// width: 80px;
+		// height: 80px;
+	}
+
+	&__inner {
+		box-sizing: border-box;
+		width: 20px;
+		height: 20px;
+
+		&.left {
+			border-right: 2px solid silver;
+		}
+		&.bottom {
+			border-top: 2px solid silver;
+		}
+
+		.edge-top & {
+			&.top.left {
+				border-right: none;
+			}
+		}
+
+		.edge-bottom & {
+			&.bottom.left {
+				border-right: none;
+			}
+		}
+
+		.edge-left & {
+			&.bottom.left {
+				border-top: none;
+			}
+		}
+
+		.edge-right & {
+			&.bottom.right {
+				border-top: none;
+			}
+		}
+	}
+
+	.stone-box {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.stone {
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			border-radius: 100%;
+			z-index: 10;
+
+			&.black {
+				background-color: black;
+			}
+			&.white {
+				background-color: white;
+				border: 1px solid gray;
+			}
+		}
+	}
+}
+
+.board.current-white {
+	.stone.empty {
+		&:hover {
+            background-color: white;
+			border: 1px dotted gray;
+		}
+	}
+}
+
+.board.current-black {
+	.stone.empty {
+		&:hover {
+            background-color: black;
+			border: 1px dotted gray;
+		}
+	}
+}
